@@ -1,17 +1,18 @@
 
 # ---------------------------------- importing Libraries ---------------------------------- #
 
+import csv
+import easyocr
 import cv2                      
 import torch
-import easyocr
-import csv
+#import time
 
 # ---------------------------------- Load YOLO Model ---------------------------------- #
 
 MODEL_PATH = "/home/ayaan/Desktop/numberplate/model.pt"
-# If the model fails to load (e.g., file missing or corrupted or wrong path)we stop the program and show a clear message
+# if the model fails to load (e.g., file missing or corrupted or wrong path)we stop the program and show a clear message
 try:
-    model = torch.hub.load("ultralytics/yolov5", "custom", path=MODEL_PATH, force_reload=True)
+    model = torch.hub.load("ultralytics/yolov3","custom",path=MODEL_PATH,force_reload=True)
     print("[INFO] YOLO model loaded successfully.")
 except Exception as e:
     print(f"[ERROR] Failed to load YOLO model: {e}")
@@ -29,18 +30,18 @@ except Exception as e:
 
 # ---------------------------------- Video Input & Output ---------------------------------- #
 
-video =cv2.VideoCapture("path of input_vidoe.mp4")#write path of input video
+video =cv2.VideoCapture("path_of_input_vidoe.mp4")#write path of input video
 frame_width=int(video.get(3))
 frame_height=int(video.get(4))
 fps=int(video.get(cv2.CAP_PROP_FPS))
-output_video=cv2.VideoWriter("output_video.mp4", cv2.VideoWriter_fourcc(*"mp4v"),fps,(frame_width, frame_height))
+output_video=cv2.VideoWriter("output_video.mp4", cv2.VideoWriter_fourcc(*"mp4v"),fps,(frame_width,frame_height))
 
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ CSV file Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
-csv_path = "ocr_results.csv" #Desired path here
-# Making sure the CSV file is created properly,if there is a problem(like permission issues)
+csv_path = "ocr_results.csv" #CSV path here
+# Make sure the CSV file is created properly,if there is a problem(like permission issues)
 try:
     with open(csv_path, mode='w',newline='') as csvfile:
         writer = csv.writer(csvfile)
