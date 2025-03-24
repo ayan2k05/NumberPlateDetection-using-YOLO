@@ -1,7 +1,7 @@
 # AI based License Plate Detection with OCR using YOLOv5
 
 ## Overview
-This Python code is meant to recognize license plates from a video based on a pre-trained YOLOv5 model. After detecting the license plates, the code employs EasyOCR to read the plate numbers. The output is stored in a CSV file and marked on the video, which is then output as a new video. The script incorporates mechanisms of error handling to make it work consistently and not crash at any time, which makes it appropriate for industrial use.
+This Python code is meant to recognize license plates from a video based on a pre-trained YOLOv5 model. After detecting the license plates, the code employs EasyOCR to read the plate numbers. The output is stored in a CSV file and marked on the video, which is then output as a new video. The script incorporates mechanisms of error handling to make it work consistently and not crash at any time, which makes it appropriate for industrial use. Currently i do't know how to train YOLO modal neither i have hardware good enough. So there is only source code and conf.yaml file if in future i wish to train modal.
 
 ## Library Used
 - OpenCV -> For handling video input/output and drawing annotations on frames.
