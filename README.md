@@ -1,16 +1,16 @@
-# AI based License Plate Detection with OCR using YOLOv5
+# AI based License Plate Detection with OCR using YOLOv3
 
 ## Overview
 This Python code is meant to recognize license plates from a video based on a pre-trained YOLOv5 model. After detecting the license plates, the code employs EasyOCR to read the plate numbers. The output is stored in a CSV file and marked on the video, which is then output as a new video. The script incorporates mechanisms of error handling to make it work consistently and not crash at any time, which makes it appropriate for industrial use. Currently i do't know how to train YOLO modal neither i have hardware good enough. So there is only source code and conf.yaml file if in future i wish to train modal.
 
 ## Library Used
 - OpenCV -> For handling video input/output and drawing annotations on frames.
-- PyTorch -> For loading and running the YOLOv5 model.
+- PyTorch -> For loading and running the YOLOv3 model.
 - EasyOCR -> For performing Optical Character Recognition on detected plates.
 - CSV -> For recording detection results.
 
 ## How it Works
-1. The YOLOv5 model is loaded from the specified path. If the model fails to load,script stops with a proper error message.
+1. The YOLOv3 model is loaded from the specified path. If the model fails to load,script stops with a proper error message.
 2. EasyOCR is initialized for reading English text from detected license plates.
 3. The video is opened and frame details like width, height, and FPS are captured.
 4. A CSV file is prepared for logging OCR results.
@@ -25,7 +25,7 @@ This Python code is meant to recognize license plates from a video based on a pr
 7. Once all frames are processed, the video and CSV file are saved, and resources are released.
 
 ## Variable Descriptions
-- `MODEL_PATH` -> Path to the YOLOv5 model (.pt file).
+- `MODEL_PATH` -> Path to the YOLOv3 model (.pt file).
 - `model` -> Loaded YOLOv5 model used for detection.
 - `reader` -> EasyOCR reader for recognizing text.
 - `video` -> VideoCapture object for reading the video.
