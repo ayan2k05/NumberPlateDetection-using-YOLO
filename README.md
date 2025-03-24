@@ -26,7 +26,7 @@ This Python code is meant to recognize license plates from a video based on a pr
 
 ## Variable Descriptions
 - `MODEL_PATH` -> Path to the YOLOv3 model (.pt file).
-- `model` -> Loaded YOLOv5 model used for detection.
+- `model` -> Loaded YOLOv3 model used for detection.
 - `reader` -> EasyOCR reader for recognizing text.
 - `video` -> VideoCapture object for reading the video.
 - `frame_width`,`frame_height` -> Dimensions of each video frame.
