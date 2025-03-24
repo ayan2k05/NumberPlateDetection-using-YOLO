@@ -1,0 +1,6 @@
+train: /home/ayaan/Desktop/numberplate/Data/images/train
+val: /home/ayaan/Desktop/numberplate/Data/images/val
+test: /home/ayaan/Desktop/numberplate/Data/images/test
+nc: 1  
+names: ["license_plate"]
+
